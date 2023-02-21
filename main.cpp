@@ -20,17 +20,9 @@ public:
 			return false;
 		}
 	}
-	bool operator>(Fraction other)
-	{
-		if (division() > other.division()) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	bool operator<=(Fraction other) { return !(*this > other); }
 	bool operator>=(Fraction other) { return !(*this < other); }
+	bool operator>(Fraction other) { return other < *this; }
+	bool operator<=(Fraction other) { return !(*this > other); }
 private:
 	int numerator_;
 	int denominator_;
