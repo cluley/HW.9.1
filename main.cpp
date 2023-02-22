@@ -8,12 +8,11 @@ public:
 		numerator_ = numerator;
 		denominator_ = denominator;
 	}
-	double division() { return static_cast<double>(numerator_) / static_cast<double>(denominator_); }
-	bool operator==(Fraction other) { return division() == other.division(); }
+	bool operator==(Fraction other) { return (numerator_ * denominator_) == (other.numerator_ * other.denominator_); }
 	bool operator!=(Fraction other) { return !(*this == other); }
 	bool operator<(Fraction other)
 	{
-		if (division() < other.division()) {
+		if ((numerator_ * denominator_) < (other.numerator_ * other.denominator_)) {
 			return true;
 		}
 		else{
